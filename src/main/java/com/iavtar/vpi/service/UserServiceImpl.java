@@ -3,15 +3,17 @@ package com.iavtar.vpi.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.iavtar.vpi.model.User;
 import com.iavtar.vpi.repository.UserRepository;
 
-@Service
+
+/**
+ * @author indra
+ * */
+
 public class UserServiceImpl implements UserService {
 
-	
 	@Autowired
 	private UserRepository userRepository;
 
@@ -21,9 +23,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void saveUser(User user) {
-		userRepository.save(user);		
+		userRepository.save(user);
 	}
-	
+
 	@Override
 	public List<User> allUsers() {
 		List<User> allUsers = (List<User>) userRepository.findAll();

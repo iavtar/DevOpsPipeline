@@ -7,18 +7,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.iavtar.vpi.model.Product;
-import com.iavtar.vpi.service.ProductService;
+import com.iavtar.vpi.model.ProductCatalog;
+import com.iavtar.vpi.service.ProductCatalogService;
+
+
+/**
+ * @author indra
+ * */
 
 @Controller
 public class InventoryController {
 
 	@Autowired
-	private ProductService productService;
+	private ProductCatalogService productCatalogService;
 	
 	@GetMapping("/rawInventory")
 	public String allProducts(Model model){
-		List<Product> allProducts = productService.products();		
+		List<ProductCatalog> allProducts = productCatalogService.products();		
 		model.addAttribute("products",allProducts);
 		return "views/rawInventory";
 	}
