@@ -38,6 +38,7 @@ pipeline{
 			}
 			steps{
 				echo "compile Stages"
+				sh 'mvn clean install package'
 			}
 		}
 		
