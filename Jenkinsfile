@@ -53,6 +53,81 @@ pipeline{
 			}
 		}
 		
+		stage("Unit Test"){
+			agent{
+				node {
+					label "${params.SLAVE_AGENT}"
+					customWorkspace "/home/jenkins-slave-01/"
+				}
+			}
+			when{
+				expression{	return "${params.PHASE}" =~ /(BUILD.*)/}
+			}
+			steps{
+				echo "Unit Test Stages"
+			}
+		}
+		
+		stage("Sonar Code Quality"){
+			agent{
+				node {
+					label "${params.SLAVE_AGENT}"
+					customWorkspace "/home/jenkins-slave-01/"
+				}
+			}
+			when{
+				expression{	return "${params.PHASE}" =~ /(BUILD.*)/}
+			}
+			steps{
+				echo "Sonar Code Quality"
+			}
+		}
+		
+		stage("SAST-Veracode"){
+			agent{
+				node {
+					label "${params.SLAVE_AGENT}"
+					customWorkspace "/home/jenkins-slave-01/"
+				}
+			}
+			when{
+				expression{	return "${params.PHASE}" =~ /(BUILD.*)/}
+			}
+			steps{
+				echo "SAST Analysis"
+			}
+		}
+		
+		stage("DAST-AppScan"){
+			agent{
+				node {
+					label "${params.SLAVE_AGENT}"
+					customWorkspace "/home/jenkins-slave-01/"
+				}
+			}
+			when{
+				expression{	return "${params.PHASE}" =~ /(BUILD.*)/}
+			}
+			steps{
+				echo "DAST Analysis"
+			}
+		}
+		
+		stage("Deploy"){
+			agent{
+				node {
+					label "${params.SLAVE_AGENT}"
+					customWorkspace "/home/jenkins-slave-01/"
+				}
+			}
+			when{
+				expression{	return "${params.PHASE}" =~ /(BUILD.*)/}
+			}
+			steps{
+				echo "Deploy"
+			}
+		}
+		
 		
 		
 	}
