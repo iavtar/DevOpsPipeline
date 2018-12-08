@@ -38,6 +38,23 @@ pipeline{
 			}
 		}
 		
+		stage("Publish"){
+			agent{
+				node {
+					label "${params.SLAVE_AGENT}"
+					customWorkspace "/home/jenkins-slave-01/"
+				}
+			}
+			when{
+				expression{	return "${params.PHASE}" =~ /(BUILD.*)/}
+			}
+			steps{
+				echo "Publish Stages"
+			}
+		}
+		
+		
+		
 	}
 	
 }
