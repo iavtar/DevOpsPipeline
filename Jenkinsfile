@@ -30,7 +30,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/"
+					customWorkspace "/home/jenkins-slave-01/workspace/"
 				}
 			}
 			when{
