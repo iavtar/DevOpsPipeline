@@ -27,7 +27,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/home/jenkins-slave-01/"
+					customWorkspace "/opt/app/devsecops01"
 				}
 			}
 			when{
@@ -42,7 +42,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/home/jenkins-slave-01/"
+					customWorkspace "/opt/app/devsecops01"
 				}
 			}
 			when{
@@ -57,7 +57,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/home/jenkins-slave-01/"
+					customWorkspace "/opt/app/devsecops01"
 				}
 			}
 			when{
@@ -72,7 +72,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/home/jenkins-slave-01/"
+					customWorkspace "/opt/app/devsecops01"
 				}
 			}
 			when{
@@ -87,7 +87,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/home/jenkins-slave-01/"
+					customWorkspace "/opt/app/devsecops01"
 				}
 			}
 			when{
@@ -102,7 +102,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/home/jenkins-slave-01/"
+					customWorkspace "/opt/app/devsecops01"
 				}
 			}
 			when{
@@ -117,7 +117,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/home/jenkins-slave-01/"
+					customWorkspace "/opt/app/devsecops01"
 				}
 			}
 			when{
