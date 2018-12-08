@@ -16,12 +16,12 @@ pipeline{
 	
 	//All jenkins job parameters will come here
 	parameters{
-		String(name: 'PHASE', defaultValue: 'BUILD', description: 'The stage to run pipeline')
-		String(name: 'TARGET_ENV', defaultValue: 'SCAN')
-		String(name: 'SLAVE_AGENT', defaultValue: '172.31.29.41')
-		String(name: 'REL', defaultValue: 'dev')
-		String(name: 'bld', defaultValue: 'st')
-		String(name: 'proj', defaultValue: 'devsecops01')
+		string(name: 'PHASE', defaultValue: 'BUILD', description: 'The stage to run pipeline')
+		string(name: 'TARGET_ENV', defaultValue: 'SCAN')
+		string(name: 'SLAVE_AGENT', defaultValue: '172.31.29.41')
+		string(name: 'REL', defaultValue: 'dev')
+		string(name: 'bld', defaultValue: 'st')
+		string(name: 'proj', defaultValue: 'devsecops01')
 	}
 	
 	stages{
