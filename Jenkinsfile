@@ -1,6 +1,5 @@
-//@Author: Indra Avatar Singh------May The Force be with U :X
 #!/usr/bin/env groovy
-
+//@Author: Indra Avatar Singh------May The Force be with U :X
 pipeline{
 
 	agent any
