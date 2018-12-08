@@ -7,7 +7,7 @@ pipeline{
 	environment{
 		APPNAME="DevOps-01"
 		DEBUG_FLAGS='-g'
-		SLAVE_AGENT='172.31.29.41'
+		SLAVE_AGENT='Slave01'
 		REL=''
 		bld=''
 	}
@@ -16,7 +16,7 @@ pipeline{
 	parameters{
 		string(name: 'PHASE', defaultValue: 'BUILD', description: 'The stage to run pipeline')
 		string(name: 'TARGET_ENV', defaultValue: 'SCAN')
-		string(name: 'SLAVE_AGENT', defaultValue: '172.31.29.41')
+		string(name: 'SLAVE_AGENT', defaultValue: 'Slave01')
 		string(name: 'REL', defaultValue: 'dev')
 		string(name: 'bld', defaultValue: 'st')
 	}
@@ -27,7 +27,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/devsecops01"
+					customWorkspace "/home/jenkins-slave-01/"
 				}
 			}
 			when{
@@ -35,7 +35,6 @@ pipeline{
 			}
 			steps{
 				echo "compile Stages"
-				sh 'mvn clean install package'
 			}
 		}
 		
