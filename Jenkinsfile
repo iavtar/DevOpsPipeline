@@ -2,7 +2,7 @@
 
 pipeline{
 
-	agent none
+	agent any
 	
 	environment{
 		APPNAME="DevOps-01"
