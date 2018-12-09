@@ -27,7 +27,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/devsecops01"
+					customWorkspace "/home/jenkins-slave-01/workspace/app/devsecops01"
 				}
 			}
 			when{
@@ -35,6 +35,8 @@ pipeline{
 			}
 			steps{
 				echo "compile Stages"
+				sh 'cd /home/jenkins-slave-01/workspace/app/devsecops01'
+				sh 'mvn -version'
 			}
 		}
 		
@@ -42,7 +44,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/devsecops01"
+					customWorkspace "/home/jenkins-slave-01/workspace/app/devsecops01"
 				}
 			}
 			when{
@@ -57,7 +59,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/devsecops01"
+					customWorkspace "/home/jenkins-slave-01/workspace/app/devsecops01"
 				}
 			}
 			when{
@@ -72,7 +74,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/devsecops01"
+					customWorkspace "/home/jenkins-slave-01/workspace/app/devsecops01"
 				}
 			}
 			when{
@@ -87,7 +89,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/devsecops01"
+					customWorkspace "/home/jenkins-slave-01/workspace/app/devsecops01"
 				}
 			}
 			when{
@@ -102,7 +104,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/devsecops01"
+					customWorkspace "/home/jenkins-slave-01/workspace/app/devsecops01"
 				}
 			}
 			when{
@@ -117,7 +119,7 @@ pipeline{
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
-					customWorkspace "/opt/app/devsecops01"
+					customWorkspace "/home/jenkins-slave-01/workspace/app/devsecops01"
 				}
 			}
 			when{
