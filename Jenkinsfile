@@ -35,8 +35,10 @@ pipeline{
 			}
 			steps{
 				echo "compile Stages"
-				sh 'cd /home/jenkins-slave-01/workspace/app/devsecops01'
-				sh 'mvn -version'
+				//sh 'cd /home/jenkins-slave-01/workspace/app/devsecops01'
+				//sh 'chmod 777 /home/jenkins-slave-01/workspace/app/devsecops01'
+				//sh 'rm -rf *'
+				//sh 'mvn -version'
 			}
 		}
 		
@@ -100,7 +102,7 @@ pipeline{
 			}
 		}
 		
-		stage("DAST-AppScan"){
+		stage("DAST-OWASP-ZAP"){
 			agent{
 				node {
 					label "${params.SLAVE_AGENT}"
@@ -111,7 +113,7 @@ pipeline{
 				expression{	return "${params.PHASE}" =~ /(BUILD.*)/}
 			}
 			steps{
-				echo "DAST Analysis"
+				echo "DAST-OWASP-ZAP"
 			}
 		}
 		
